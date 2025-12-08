@@ -29,14 +29,14 @@ export default defineConfig({
   //new AT -> Launch a development web server during the tests
   webServer: {
     command: 'npm run start',
-    url: 'http://localhost:8080',
-    name: 'Backend',
+    url: 'http://localhost:5050',
+    //name: 'Backend',
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:5050',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',

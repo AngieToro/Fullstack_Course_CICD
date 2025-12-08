@@ -4,10 +4,11 @@
   "type": "module",
   "description": "Full Stack Open",
   "scripts": {
+    "start": "node backend/app.js",
     "start:frontend": "cd frontend && webpack serve --config webpack.config.cjs --mode development",
-    "build": "cd frontend && webpack serve --config webpack.config.cjs --mode production",
     "start:backend": "node backend/app.js",
     "start-prod": "node backend/app.js",
+    "build": "cd frontend && webpack serve --config webpack.config.cjs --mode production",
     "test": "jest",
     "test:e2e": "playwright test",
     "eslint": "eslint frontend/src/**/*.jsx backend/**/*.js",

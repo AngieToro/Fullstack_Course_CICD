@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import axiosMock from 'axios'
-import { act } from 'react-dom/test-utils'
+import { act } from 'react'
 import '@testing-library/jest-dom'
 import PokemonPage from '../frontend/src/PokemonPage'
 
