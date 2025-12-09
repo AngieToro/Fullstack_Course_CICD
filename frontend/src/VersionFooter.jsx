@@ -1,5 +1,6 @@
 /* global VITE_BACKEND_URL */
 import { useEffect, useState } from 'react'
+import { normalizeBaseUrl } from '../utils/utils.js'
 
 const VersionFooter = () => {
 
@@ -13,8 +14,11 @@ const VersionFooter = () => {
 
   console.log('Backend url:', backendBase)
 
+  const normalizedBaseUrl = normalizeBaseUrl(backendBase)
+  console.log('Normalice base url: ', normalizedBaseUrl)
+
   // endpoint completo
-  const baseUrl = `${backendBase}api/version`
+  const baseUrl = `${normalizedBaseUrl}api/version`
   console.log('Base url: ', baseUrl)
 
   useEffect( () => {
@@ -30,7 +34,7 @@ const VersionFooter = () => {
       }
     }
     fetchVersion()
-  }, [])
+  }, [baseUrl])
 
   //console.log('Version: ', versionInfo)
 
