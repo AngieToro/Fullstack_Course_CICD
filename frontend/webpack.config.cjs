@@ -1,4 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+
 const path = require('path')
 
 console.log('Usando Webpack desde:', __dirname)
@@ -60,5 +62,8 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
       filename: './index.html',
     }),
+    new webpack.DefinePlugin({
+      'VITE_BACKEND_URL': JSON.stringify(process.env.VITE_BACKEND_URL || '')
+    })
   ],
 }

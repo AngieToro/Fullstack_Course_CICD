@@ -3,11 +3,18 @@ import { useEffect, useState } from 'react'
 const VersionFooter = () => {
 
   const [ versionInfo, setVersionInfo ] = useState(null)
+  const VITE_BACKEND_URL = null
+  // VITE_BACKEND_URL será reemplazado por Webpack
+  const backendBase = VITE_BACKEND_URL || 'http://localhost:5050'
+
+  // endpoint completo
+  const baseUrl = `${backendBase}/api/version`
 
   useEffect( () => {
+
     const fetchVersion = async () => {
       try {
-        const response = await fetch('http://localhost:5050/api/version')
+        const response = await fetch(baseUrl)
         const data = await response.json()
         console.log('Version: ', data)
         setVersionInfo(data)
